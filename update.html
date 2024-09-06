@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Leaderboard</title>
+    <!-- Include your CSS files here -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="favicon.png" type="image/png" sizes="16x16">
+
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+
+    <!-- Firebase Firestore (for database functionality) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+</head>
+<body>
+     <header>
+        <a href="index.html">
+            <img src="logo.png" alt="Interact Club Logo" height="50"> <!-- Interact Club Logo -->
+        </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <h1>Admin</h1>
+    </header>
+    <h1 id="welcomeMessage">Hi, </h1>
+    
+    <!-- Form to update leaderboard -->
+    <form id="update-form">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="number" id="points" placeholder="Points to be added" required>
+        <button type="submit">Add Points</button>
+    </form><br><br>
+    <form id="deduct-form">
+        <input type="text" id="deduct-name" placeholder="Name" required>
+        <input type="number" id="deduct-points" placeholder="Points to be Deducted" required>
+        <button type="submit">Deduct Points</button>
+    </form><br><br><br>
+
+    <!-- Unfiltered Leaderboard Section -->
+    <table id="leaderboard">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Points</th>
+                <th>Action</th> <!-- New Action column -->
+            </tr>
+        </thead>
+        <tbody id="leaderboard-body">
+            <!-- Data will be dynamically inserted here -->
+        </tbody>
+    </table>
+    
+
+    <!-- Include Firebase from CDN -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="update.js"></script>
+</body>
+</html>

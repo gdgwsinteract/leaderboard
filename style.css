@@ -1,0 +1,332 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: orange;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#header-left {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    width: 150px;
+    height: auto;
+    margin-right: 15px;
+}
+
+#header-right {
+    display: flex;
+    align-items: center;
+}
+
+#school-logo {
+    width: 150px;
+    height: auto;
+    margin-right: 15px;
+}
+
+#admin-login {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.nav {
+    float: right; /* Aligns the navigation to the right */
+}
+
+.button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 15px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    margin: 10px; /* Margin for spacing */
+}
+
+.button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto; /* Center the form */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold; /* Make labels bold */
+}
+
+button {
+    background-color: #007bff; /* Change background color */
+    color: white; /* Change text color */
+    padding: 15px; /* Increase padding */
+    font-size: 16px; /* Increase font size */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    width: 100%; /* Make the button full width */
+}
+
+button:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
+
+button:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add shadow on focus */
+}
+
+input[type="text"],
+input[type="number"] {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #4CAF50; /* Green border */
+    border-radius: 5px;
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #45a049; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+input[type="password"] {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #4CAF50; /* Green border */
+    border-radius: 5px;
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+input[type="password"]:focus {
+    border-color: #45a049; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#resultMessage {
+    margin-top: 20px;
+    font-weight: bold;
+    color: green;
+    text-align: center; /* Center the message */
+}
+
+#welcomeMessage {
+    margin-bottom: 20px;
+    text-align: center; /* Center the welcome message */
+}
+
+table {
+    width: 100%; /* Set to 100% for maximum width */
+    max-width: 1200px; /* Optional: limit max width if needed */
+    margin: 20px auto; /* Center the table horizontally with auto margins */
+    border-collapse: collapse; /* Remove space between borders */
+    font-size: 18px; /* Increase font size */
+    text-align: left; /* Align text to the left */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    overflow: hidden; /* Ensure child elements respect border-radius */
+}
+
+th, td {
+    padding: 12px 15px; /* Add padding inside cells */
+    border: 1px solid #ddd; /* Add border to cells */
+}
+
+th {
+    background-color: #007bff; /* Header background color */
+    color: white; /* Header text color */
+    text-transform: uppercase; /* Uppercase text */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternate row color */
+}
+
+tr:hover {
+    background-color: #e0e0e0; /* Change background on hover */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Further adjust font size */
+    }
+
+    header {
+        padding: 10px; /* Add padding for better spacing */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Adjust heading size */
+    }
+
+    .button {
+        width: 100%; /* Make buttons full-width */
+        padding: 12px; /* Increase button padding */
+    }
+
+    table {
+        font-size: 12px; /* Smaller font for table */
+    }
+
+    iframe {
+        width: 100%; /* Make iframe full-width */
+        height: auto; /* Adjust height automatically */
+    }
+}
+/* Mobile Responsiveness for Smaller Screens (Keep Desktop Layout Intact) */
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    /* Header adjustments */
+    header {
+        display: flex;
+        flex-wrap: wrap; /* Allows the header elements to wrap instead of disappear */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header img {
+        max-width: 80px; /* Resize logo slightly for mobile */
+        height: auto;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        flex: 1 1 100%; /* Ensures the title spans full width */
+        text-align: center;
+    }
+
+    /* Navigation link */
+    .nav a {
+        font-size: 1rem;
+        margin-top: 10px;
+        padding: 5px;
+    }
+
+    /* Maintain table size and visibility */
+    table {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    table th, table td {
+        padding: 8px;
+    }
+
+    /* Forms adjustments */
+    form {
+        display: flex;
+        flex-direction: column; /* Stack the form fields for mobile */
+        gap: 15px;
+        width: 100%;
+    }
+
+    form input, form button {
+        width: 100%; /* Make form inputs and buttons full width */
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+
+    .iframe-container {
+        position: relative;
+        width: 100%;  /* Full width */
+        height: 0;
+        padding-bottom: 56.25%;  /* 16:9 Aspect Ratio */
+        overflow: hidden;
+    }
+
+    .iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;  /* Full width */
+        height: 100%; /* Full height */
+        border: none; /* Remove border */
+        margin-top: 0; /* Keep margin top as specified */
+    }
+}
+
+
+
+
+
+

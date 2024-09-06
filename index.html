@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="favicon.png" type="image/png" sizes="16x16">
+<!-- Firebase App (the core Firebase SDK, compat version) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+
+<!-- Add Firebase products you want to use (e.g., Firestore, compat version) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <!-- Load Firebase SDKs -->
+    <script type="module">
+
+        const firebaseConfig = {
+        apiKey: "AIzaSyCS-hmjPhmWqzEtAZga9jnM5MK3YsOAoS0",
+        authDomain: "boom-ff045.firebaseapp.com",
+        databaseURL: "https://boom-ff045.firebaseio.com",
+        projectId: "boom-ff045",
+        storageBucket: "boom-ff045.appspot.com",
+        messagingSenderId: "741169276496",
+        appId: "1:741169276496:web:42e57a066f208f686e1355"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    // Load leaderboard function for index.html
+    async function loadLeaderboard() {
+        const leaderboardTable = document.querySelector('#leaderboard tbody');
+        leaderboardTable.innerHTML = ''; // Clear the table first
+
+        // Fetch only entries that are not hidden
+        const q = db.collection('leaderboard').where('hidden', '==', false).orderBy('points', 'desc');
+        const querySnapshot = await q.get();
+        let rank = 1;
+
+        querySnapshot.forEach((doc) => {
+            const data = doc.data();
+            const row = leaderboardTable.insertRow();
+
+            const cellRank = row.insertCell(0);
+            const cellName = row.insertCell(1);
+            const cellPoints = row.insertCell(2);
+
+            // Set rank and emoji for top 3
+            cellRank.textContent = rank;
+            if (rank === 1) {
+                cellRank.textContent += ' 🥇'; // Gold medal emoji
+            } else if (rank === 2) {
+                cellRank.textContent += ' 🥈'; // Silver medal emoji
+            } else if (rank === 3) {
+                cellRank.textContent += ' 🥉'; // Bronze medal emoji
+            }
+
+            cellName.textContent = data.name;
+            cellPoints.textContent = data.points;
+
+            rank++;
+        });
+    }
+
+    // Call loadLeaderboard on page load
+    document.addEventListener('DOMContentLoaded', loadLeaderboard);
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Interact Club Logo" height="50"> <!-- Interact Club Logo -->
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <h1>Leaderboard</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="nav">
+            <a href="login.html" class="button">Admin Login</a> <!-- Button to navigate to the login page -->
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="logo">
+            <a target="_blank" href="https://gdgws.gdgoenka.com/">
+                <img src="school_logo.png"height="50"> 
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <table id="leaderboard">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Leaderboard data will be inserted here -->
+            </tbody>
+        </table>
+    </main>
+    <br>
+    <center><h1>Our Core Team 2024-2025</h1></center>
+    <style>
+main {
+    margin-top: 20px; /* Add some space above the table */
+}
+
+.iframe-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 20px; /* Space between table and iframe */
+}
+
+    </style>
+    <div class="iframe-container">
+        <iframe style="border: none; margin-top: 0px;" src="https://docs.google.com/presentation/d/1P3E09rwTSrVNEjkRiak-uDkLN4ZZ9rjuQIra2THV8_w/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></body>
+    </div>
+</html>

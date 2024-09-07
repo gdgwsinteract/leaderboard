@@ -62,5 +62,50 @@
             <input type="submit" value="Login">
         </form>
     </main>
+        <style>
+        /* Center the form horizontally and vertically */
+#loginForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 600px;                      /* Increased width for a larger rectangular form */
+    padding: 40px;                     /* Padding for internal space */
+    background-color: white;
+    border-radius: 12px;               /* Rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    min-height: 300px;                 /* Increased height for a more rectangular shape */
+}
+/* Styling for input fields (text and password) */
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+    width: 100%;                       /* Full width for input fields */
+    padding: 15px;                    /* Increased padding for comfort */
+    margin-bottom: 20px;              /* Increased spacing between input fields */
+    border: 2px solid #4CAF50;        /* Green border */
+    border-radius: 6px;
+    font-size: 18px;                  /* Increased font size for better readability */
+    box-sizing: border-box;
+}
+
+/* Styling for the submit button */
+#loginForm input[type="submit"] {
+    width: 100%;                      /* Full width for the button */
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;                    /* Increased padding for comfort */
+    font-size: 18px;                  /* Increased font size for better readability */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for the submit button */
+#loginForm input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+    </style>
 </body>
 </html>
